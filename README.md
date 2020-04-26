@@ -1,6 +1,9 @@
 # csp
 
-go library for generating Content-Security-Policy headers
+[![Build Status](https://travis-ci.org/crewjam/csp.svg?branch=master)](https://travis-ci.org/crewjam/csp)
+[![Documentation](https://godoc.org/github.com/crewjam/csp?status.svg)](http://godoc.org/github.com/crewjam/csp)
+
+Package csp provides structures to add Content-Security-Policy headers to HTTP responses.
 
 ```go
 import (
