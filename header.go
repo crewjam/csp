@@ -8,36 +8,37 @@ import (
 
 // Header describes a Content-Security-Policy header
 type Header struct {
-	BaseURI                 []string        `csp:"base-uri"`
-	BlockAllMixedContent    bool            `csp:"block-all-mixed-content"`
-	ChildSrc                []string        `csp:"child-src"`
-	ConnectSrc              []string        `csp:"connect-src"`
-	DefaultSrc              []string        `csp:"default-src"`
-	FontSrc                 []string        `csp:"font-src"`
-	FormAction              []string        `csp:"form-action"`
-	FrameAncestors          []string        `csp:"frame-ancestors"`
-	FrameSrc                []string        `csp:"frame-src"`
-	ImgSrc                  []string        `csp:"img-src"`
-	ManifestSrc             []string        `csp:"manifest-src"`
-	MediaSrc                []string        `csp:"media-src"`
-	NavigateTo              []string        `csp:"navigate-to"`
-	ObjectSrc               []string        `csp:"object-src"`
-	PluginTypes             []string        `csp:"plugin-types"`
-	PrefetchSrc             []string        `csp:"prefetch-src"`
-	Referrer                ReferrerPolicy  `csp:"referrer"`
-	ReportTo                string          `csp:"report-to"`
-	ReportURI               string          `csp:"report-uri"`
-	RequireSRIFor           []RequireSRIFor `csp:"require-sri-for"`
-	Sandbox                 Sandbox         `csp:"sandbox"`
-	ScriptSrc               []string        `csp:"script-src"`
-	ScriptSrcAttr           []string        `csp:"script-src-attr"`
-	ScriptSrcElem           []string        `csp:"script-src-elem"`
-	StyleSrc                []string        `csp:"style-src"`
-	StyleSrcAttr            []string        `csp:"style-src-attr"`
-	StyleSrcElem            []string        `csp:"style-src-elem"`
-	TrustedTypes            []string        `csp:"trusted-types"`
-	UpgradeInsecureRequests bool            `csp:"upgrade-insecure-requests"`
-	WorkerSrc               []string        `csp:"worker-src"`
+	BaseURI                 []string                 `csp:"base-uri"`
+	BlockAllMixedContent    bool                     `csp:"block-all-mixed-content"`
+	ChildSrc                []string                 `csp:"child-src"`
+	ConnectSrc              []string                 `csp:"connect-src"`
+	DefaultSrc              []string                 `csp:"default-src"`
+	FontSrc                 []string                 `csp:"font-src"`
+	FormAction              []string                 `csp:"form-action"`
+	FrameAncestors          []string                 `csp:"frame-ancestors"`
+	FrameSrc                []string                 `csp:"frame-src"`
+	ImgSrc                  []string                 `csp:"img-src"`
+	ManifestSrc             []string                 `csp:"manifest-src"`
+	MediaSrc                []string                 `csp:"media-src"`
+	NavigateTo              []string                 `csp:"navigate-to"`
+	ObjectSrc               []string                 `csp:"object-src"`
+	PluginTypes             []string                 `csp:"plugin-types"`
+	PrefetchSrc             []string                 `csp:"prefetch-src"`
+	Referrer                ReferrerPolicy           `csp:"referrer"`
+	ReportTo                string                   `csp:"report-to"`
+	ReportURI               string                   `csp:"report-uri"`
+	RequireSRIFor           []RequireSRIFor          `csp:"require-sri-for"`
+	RequireTrustedTypesFor  []RequireTrustedTypesFor `csp:"require-trusted-types-for"`
+	Sandbox                 Sandbox                  `csp:"sandbox"`
+	ScriptSrc               []string                 `csp:"script-src"`
+	ScriptSrcAttr           []string                 `csp:"script-src-attr"`
+	ScriptSrcElem           []string                 `csp:"script-src-elem"`
+	StyleSrc                []string                 `csp:"style-src"`
+	StyleSrcAttr            []string                 `csp:"style-src-attr"`
+	StyleSrcElem            []string                 `csp:"style-src-elem"`
+	TrustedTypes            []string                 `csp:"trusted-types"`
+	UpgradeInsecureRequests bool                     `csp:"upgrade-insecure-requests"`
+	WorkerSrc               []string                 `csp:"worker-src"`
 }
 
 // RequireSRIFor represents the possible values of the require-sri-for field
@@ -50,6 +51,12 @@ const (
 	// Style means to require SRI for style sheets.
 	Style RequireSRIFor = "style"
 )
+
+// RequireTrustedTypesFor represents the possible values of the require-trusted-types-for field
+type RequireTrustedTypesFor string
+
+// RTTFScript sets the value "'script'" int the require-trusted-types-for field
+const RTTFScript = "'script'"
 
 // Sandbox represents the possible values of the sandbox field
 type Sandbox string

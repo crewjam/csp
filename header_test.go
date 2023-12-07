@@ -43,6 +43,7 @@ func TestHeader(t *testing.T) {
 				ReportTo:                "ReportTo",
 				ReportURI:               "ReportURI",
 				RequireSRIFor:           []RequireSRIFor{Script, Style},
+				RequireTrustedTypesFor:  []RequireTrustedTypesFor{RTTFScript},
 				Sandbox:                 AllowDownloadsWithoutUserActivation,
 				ScriptSrc:               []string{"ScriptSrc1", "ScriptSrc2"},
 				ScriptSrcAttr:           []string{"ScriptSrcAttr1", "ScriptSrcAttr2"},
@@ -74,6 +75,7 @@ func TestHeader(t *testing.T) {
 				"report-to ReportTo; " +
 				"report-uri ReportURI; " +
 				"require-sri-for script style; " +
+				"require-trusted-types-for 'script'; " +
 				"sandbox allow-downloads-without-user-activation; " +
 				"script-src ScriptSrc1 ScriptSrc2; " +
 				"script-src-attr ScriptSrcAttr1 ScriptSrcAttr2; " +
@@ -98,5 +100,4 @@ func TestHeader(t *testing.T) {
 
 		})
 	}
-
 }
